@@ -5,3 +5,18 @@
 /* body {
   background: black;
 } */
+
+.termsnconditions {
+  font-family: "Playfair Display", serif;
+}
+
+.topbar {
+  background-color: rgb(38, 169, 209);
+}
+
+.lowbar {
+  background-color: rgb(207, 92, 155);
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
