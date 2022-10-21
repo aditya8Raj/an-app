@@ -40,12 +40,14 @@ export default function Buttons() {
           </div>
           <div class="bottom-buttons">
             <div id="login&signup" class="">
-              <button
-                type="button"
-                class="text-white bg-blue-500 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 rounded-full text-sm px-5 py-2.5 text-center dark:bg-blue-500 dark:hover:bg-blue-500 dark:focus:ring-blue-500 px=6 mb-1 mr-5"
-              >
-                Login
-              </button>
+              <Link to="/login">
+                <button
+                  type="button"
+                  class="text-white bg-blue-500 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 rounded-full text-sm px-5 py-2.5 text-center dark:bg-blue-500 dark:hover:bg-blue-500 dark:focus:ring-blue-500 px=6 mb-1 mr-5"
+                >
+                  Login
+                </button>
+              </Link>
               <Link to="/signup">
                 <button
                   type="button"
