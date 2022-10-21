@@ -7,12 +7,12 @@ import LowBar from "../components/LowBar";
 export default function LogIn() {
   return (
     <>
-      <div>
-      <TopBar/>
+      <TopBar />
+      <div className="justify-center items-center">
         <img src={logo} className="mx-auto max-w-lg pt-8 h-80" alt="logo" />
         <Buttons />
       </div>
-      <LowBar/>
+      <LowBar />
     </>
   );
 }
