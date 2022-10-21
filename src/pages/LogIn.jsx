@@ -126,7 +126,7 @@ export default function LogIn() {
                       href="#!"
                       class="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
                     >
-                      Register
+                      <Link to="/signup">Register</Link>
                     </a>
                   </p>
                 </form>
