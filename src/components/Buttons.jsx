@@ -1,6 +1,7 @@
 import React from "react";
 import googleLogo from "../assets/google.png";
 import appleLogo from "../assets/apple.png";
+import { Link } from "react-router-dom";
 
 export default function Buttons() {
   return (
@@ -51,7 +52,12 @@ export default function Buttons() {
               >
                 Sign Up
               </button>
-              <h3 class="termsnconditions">Terms & Conditions</h3>
+              <br />
+              <Link to="/termsnconditions">
+                <button class="hover:text-gray-500">
+                  <h3 class="termsnconditions">Terms & Conditions</h3>
+                </button>
+              </Link>
             </div>
           </div>
         </div>
