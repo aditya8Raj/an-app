@@ -2,9 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* body {
+body {
   background: black;
-} */
+  color: white;
+}
 
 .termsnconditions {
   font-family: "Playfair Display", serif;

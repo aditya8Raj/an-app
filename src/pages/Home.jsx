@@ -1,18 +1,12 @@
-import React from "react";
-import logo from "../assets/logo.png";
-import Buttons from "../components/Buttons";
-import TopBar from "../components/TopBar";
-import LowBar from "../components/LowBar";
+import React from 'react'
+import { auth } from "../firebase-config";
 
-export default function LogIn() {
+const Home = () => {
   return (
-    <>
-      <TopBar />
-      <div className="justify-center items-center">
-        <img src={logo} className="mx-auto max-w-lg pt-8 h-80" alt="logo" />
-        <Buttons />
-      </div>
-      <LowBar />
-    </>
-  );
+    <div>HOME PAGE!!
+    <p>Welcome back</p> <h1>{auth.currentUser.email}</h1>
+    </div>
+  )
 }
+
+export default Home

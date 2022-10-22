@@ -4,8 +4,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import TermsAndConditions from "./pages/TermsAndConditions";
-import SignUp from "./pages/SignUp";
+import Register from "./pages/Register";
 import LogIn from "./pages/LogIn";
+import Home from "./pages/Home";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -14,8 +15,9 @@ root.render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/termsnconditions" element={<TermsAndConditions />} />
-        <Route path="/signup" element={<SignUp/>}/>
+        <Route path="/register" element={<Register/>}/>
         <Route path="/login" element={<LogIn/>}/>
+        <Route path="/home" element={<Home/>}/>
       </Routes>
     </React.StrictMode>
   </BrowserRouter>

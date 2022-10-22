@@ -1,12 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../assets/logo.png";
 import googleLogo from "../assets/google.png";
 import appleLogo from "../assets/apple.png";
 import { Link } from "react-router-dom";
 import TopBar from "../components/TopBar";
 import LowBar from "../components/LowBar";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase-config";
+
 
 export default function LogIn() {
+  const [loginEmail, setLoginEmail] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
+  const login = async () => {
+    try {
+      const user = await signInWithEmailAndPassword(
+        auth,
+        loginEmail,
+        loginPassword
+      );
+      console.log(user);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
   return (
     <>
       <div>
@@ -31,7 +49,9 @@ export default function LogIn() {
                       type="text"
                       className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                       placeholder="Email address"
-                      onChange={(e) => {}}
+                      onChange={(event) => {
+                        setLoginEmail(event.target.value);
+                      }}
                     />
                   </div>
 
@@ -41,7 +61,9 @@ export default function LogIn() {
                       type="password"
                       className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                       placeholder="Password"
-                      onChange={(e) => {}}
+                      onChange={(event) => {
+                        setLoginPassword(event.target.value);
+                      }}
                     />
                   </div>
 
@@ -61,23 +83,26 @@ export default function LogIn() {
                         Remember me
                       </label>
                     </div>
-                    <a
+                    <button
                       href="#!"
                       className="text-blue-600 hover:text-blue-700 focus:text-blue-700 active:text-blue-800 duration-200 transition ease-in-out"
                     >
                       Forgot password?
-                    </a>
+                    </button>
                   </div>
 
                   {/* <!-- Submit button --> */}
-                  <button
-                    type="submit"
-                    className="inline-block px-7 py-3 text-white font-medium text-sm leading-snug uppercase rounded shadow-md bg-gradient-to-r from-blue-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-800 focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full"
-                    data-mdb-ripple="true"
-                    data-mdb-ripple-color="light"
-                  >
-                    Sign in
-                  </button>
+                  <Link to="/home">
+                    <button
+                      type="submit"
+                      className="inline-block px-7 py-3 text-white font-medium text-sm leading-snug uppercase rounded shadow-md bg-gradient-to-r from-blue-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-800 focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full"
+                      data-mdb-ripple="true"
+                      data-mdb-ripple-color="light"
+                      onClick={login}
+                    >
+                      Log In
+                    </button>
+                  </Link>
 
                   <div className="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
                     <p className="text-center font-semibold mx-4 mb-0">OR</p>
@@ -120,14 +145,14 @@ export default function LogIn() {
                       </div>
                     </button>
                   </div>
-                  <p class="text-sm font-semibold mt-2 pt-1 mb-0">
+                  <p className="text-sm font-semibold mt-2 pt-1 mb-0">
                     Don't have an account?
-                    <a
+                    <button
                       href="#!"
-                      class="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
+                      className="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
                     >
-                      <Link to="/signup">Register</Link>
-                    </a>
+                      <Link to="/register">Register</Link>
+                    </button>
                   </p>
                 </form>
               </div>

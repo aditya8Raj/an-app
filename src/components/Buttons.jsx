@@ -7,7 +7,7 @@ export default function Buttons() {
       <div>
         <div className="bottom-buttons">
           <div
-            id="login&signup"
+            id="login&register"
             className="pt-4 flex justify-center items-center"
           >
             <div id="login" className="pr-2">
@@ -22,8 +22,8 @@ export default function Buttons() {
                 </button>
               </Link>
             </div>
-            <div id="signup" className="pl-2">
-              <Link to="/signup">
+            <div id="register" className="pl-2">
+              <Link to="/register">
                 <button
                   type="button"
                   className="text-white bg-pink-500 hover:bg-pink-800 focus:outline-none focus:ring-4 focus:ring-pink-300 rounded-full px-5 py-2.5 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700 w-48 transition duration-150 ease-in-out"
